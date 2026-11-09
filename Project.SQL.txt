@@ -1,0 +1,225 @@
+--Step 1: Create Database 
+CREATE DATABASE PROJECT;
+
+--Step 2:Use Database
+USE PROJECT;
+
+--Step 3:Create Schema
+CREATE SCHEMA IF NOT EXISTS custom;
+
+--Step 4:Create Table Branches
+CREATE TABLE BRANCHES(
+ 	sol_id int primary key, 
+	sol_name varchar(20)
+);
+
+--Step 5:Insert data into table branches
+
+insert into BRANCHES values(001, 'Headoffice');
+insert into BRANCHES values(002, 'Nairobi');
+insert into BRANCHES values(003,'Mombasa');
+insert into BRANCHES values(004,'Kisumu');
+insert into BRANCHES values(005,'Nakuru');
+insert into BRANCHES values(006,'Eldoret');
+insert into BRANCHES values(007,'Kakamega');
+insert into BRANCHES values(008,'Nyeri');
+insert into BRANCHES values(008, 'Kiambu');
+insert into BRANCHES values(009, 'Narok');
+insert into BRANCHES values(010,'Kericho');
+insert into BRANCHES values(011,'Migori');
+insert into BRANCHES values(012,'Machakos');
+insert into BRANCHES values(013,'Kitale');
+insert into BRANCHES values(014,'Bungoma');
+insert into BRANCHES values(015,'Busia');
+insert into BRANCHES values(016,'Kilifi');
+insert into BRANCHES values(017,'Bomet');
+insert into BRANCHES values(018,'Homabay');
+insert into BRANCHES values(019,'Garissa');
+insert into BRANCHES values(020,'Kajiado');
+insert into BRANCHES values(021,'Muranga');
+insert into BRANCHES values(022,'Embu');
+insert into BRANCHES values(023,'Meru');
+insert into BRANCHES values(024,'Isiolo');
+insert into BRANCHES values(025,'Kitui');
+insert into BRANCHES values(026,'Siaya');
+insert into BRANCHES values(027,'Kisii');
+insert into BRANCHES values(028,'Nyamira');
+insert into BRANCHES values(029,'Wajir');
+insert into BRANCHES values(030,'Mandera');
+insert into BRANCHES values(031,'Vihiga');
+insert into BRANCHES values(032,'Trans-Nzoia');
+insert into BRANCHES values(033,'Kwale');
+insert into BRANCHES values(034,'Nandi');
+insert into BRANCHES values(035,'Makueni');
+insert into BRANCHES values(036,'Taita Taveta');
+insert into BRANCHES values(037,'Tharaka Nithi');
+insert into BRANCHES values(038,'Marsabit');
+insert into BRANCHES values(039,'Turkana');
+insert into BRANCHES values(040,'Kirinyaga');
+insert into BRANCHES values(041,'Elgeyo Marakwet');
+insert into BRANCHES values(042,'West Pokot');
+insert into BRANCHES values(043,'Lamu');
+insert into BRANCHES values(044,'Laikipia');
+
+
+--Step 6:Create another table
+CREATE TABLE custom.ACCOUNTS (
+	account_id PRIMARY KEY, int,
+	account_name varchar(20),
+	sol_id int,
+	FOREIGN KEY (sol_id) REFERENCES BRANCHES (sol_id)
+);
+
+
+--Step 7: Insert data into table custom. ACCOUNTS
+
+INSERT INTO custom.ACCOUNTS (account_id, account_name, sol_id)
+VALUES 
+ (30001, 'Alison Becker', 044);
+ (30002, 'Trent Alexander Arnold', 043);
+ (30003, 'Andrew Robertson', 042);
+ (30004, 'Virgil Van Dijk', 041);
+ (30005, 'Ibrahima Konate', 040);
+ (30006, 'Alexis Mcalister', 039);
+ (30007, 'Ryan Gravenberch', 038);
+ (30008, 'Dominik Szoboszlai', 037);
+ (30009, 'Mohamed Salah', 036);
+ (30010, 'Luiz Diaz', 035);
+ (30011, 'Diogo Jota', 034);
+ (30012, 'Cody Gakpo', 033);
+ (30013, 'Darwin Nunez', 032);
+ (30014, 'Federico Chiesa', 031);
+ (30015, 'Salome Ongei', 030);
+ (30017, 'Dolphine Akoth', 029);
+ (30018, 'Jane Ndungu', 028);
+ (30019, 'Nancy Ochuodho', 027);
+ (30016, 'Dennis Gathara', 026);
+ (30020, 'Mwalaghe Mangi', 025);
+ (30021, 'Towett Beri', 024);
+ (30022, 'Richard Kibuthania', 023);
+ (30023, 'Rafa Benitez', 022);
+ (30024, 'Jose Mourinho', 021);
+ (30025, 'Jurgen Klopp', 020);
+ (30026, 'Arsene Wenger', 019);
+ (30027, 'Mauricio Pochettino', 018);
+ (30028, 'Arne Slot', 017);
+ (30029, 'James Mwangi', 016);
+ (30030, 'David Kuol', 015);
+ (30031, 'Vania Wambua', 014);
+ (30032, 'Nancy Githinji', 013);
+ (30033, 'Joseph Loiton', 012);
+ (30034, 'Betty Kyalo', 011);
+ (30035, 'Michael Owen', 010);
+ (30036, 'Didier Drogba', 009);
+ (30037, 'Michael Ballack', 008);
+ (30038, 'Frank Lampard', 007);
+ (30039, 'Florent Malouda', 006);
+ (30040, 'Peter Cech', 005);
+ (30041, 'Ashley Cole', 004);
+ (30042, 'Claude Makelele', 003);
+ (30043, 'Flozzy Ogutu', 002);
+ (30044, 'Vera Odawa', 002);
+ (30045, 'Lewis Kimanya', 010);
+ (30046, 'Laventa Oure', 003);
+ (30047, 'Jecinta Gichohi', 003);
+ (30048, 'Laura Aticka', 008);
+ (30049, 'Miriam Mangoli', 009);
+ (30050, 'Annmarie Omondi', 0014);
+ (30051, 'Vania Wambua', 020);
+ (30052, 'Bonnie Walumbwa', 021);
+ (30053, 'Flavian Owiti', 022);
+ (30054, 'Cliff Okoth', 023);
+ (30055, 'Alfrick Owuor', 024);
+ (30056, 'Robinson Omulo', 025);
+ (30057, 'Ephraim Maina', 026);
+ (30058, 'Joseph Kiilu', 027);
+ (30059, 'Mwanzi Mutilo', 028);
+ (30060, 'Hussein Mohammed', 029);
+ (30061, 'Mustafa Abdi', 030);
+ (30062, 'Ali Abdi', 031);
+ (30063, 'Jesse Wafula', 032);
+ (30064, 'Lavenda Nasimiyu', 033);
+ (30065, 'Roda Chepkirui', 034);
+ (30066, 'Yegon Patrick', 035);
+ (30067, 'Wilson Too', 036);
+ (30068, 'Brian Mogire', 037);
+ (30069, 'Davis Mogaka', 038);
+ (30070, 'Clare Osoro', 039);
+ (30071, 'Tom Ruto', 040);
+ (30072, 'Loiza Mwakita', 041);
+ (30073, 'Joyce Chebiwott', 042);
+ (30074, 'Naliaka Nasimiyu', 043);
+ (30075, 'Grace Kwini', 044);
+ (30076, 'Tom Maroa', 011);
+ (30077, 'Cynthia Rioba', 012);
+ (30078, 'Joseph Loiton', 013);
+ (30079, 'Soipan Letoo', 014);
+ (30080, 'Esther Akinyi', 015);
+ (30081, 'Mudavadi Kasimu', 016);
+ (30082, 'Lydia Wanjiru', 017);
+ (30083, 'Anne Wanjiku', 018);
+ (30084, 'Patricia Chebii', 019);
+ (30085, 'Ruth Nasimiyu', 005);
+ (30086, 'Walter Okindo', 006);
+ (30087, 'Lamex Ogweno', 007);
+ (30088, 'IT', 001);
+ (30089, 'Credit Management', 001);
+ (30090, 'Retail Banking', 001);
+ (30091, 'Business Banking', 001);
+ (30092, 'Legal', 001);
+ (30093, 'Risk, Compliance and Security', 001);
+ (30094, 'Back Office', 001);
+ (30095, 'Card Center', 001);
+ (30096, 'Finance and Data Analytics', 001);
+ (30097, 'Human Resources', 001);
+ (30098, 'Consumer Banking', 001);
+ (30099, 'Penina Karibe', 002);
+ (30100, 'Safrine Achieng', 002);
+ (30101, 'Lydia Ontita', 002);
+ (30102, 'Tom Muthiani', 002);
+ (30103, 'Timothy Njiri', 002);
+ (30104, 'Polycap Chepkwony', 002);
+ (30105, 'Yvonne Sang', 002);
+ (30106, 'Nerisha Ondola', 002);
+ (30107, 'Nancy Vanpelt', 003);
+ (30108, 'Michelle Adush', 003);
+ (30109, 'Kim Muthoni', 003);
+ (30110, 'Fiona Sambi', 004);
+ (30111, 'Janselline Awino', 004);
+ (30112, 'Simon Mignolet', 005);
+ (30113, 'Chris Wamalwa', 005);
+ (30114, 'Nabolondo Wafula', 006);
+ (30115, 'John Atwoli', 006);
+ (30116, 'Ludia Mutiso', 003);
+ (30117, 'Winnie Mwende', 003);
+ (30118, 'Esther Nzisa', 004);
+ (30119, 'Jully Nzave', 007);
+ (30120, 'Winnie Ogola', 006);
+ (30121, 'George Simiyu', 023);
+
+
+--Step 8: Create another table for scheme codes
+CREATE TABLE custom.CODES (
+    account_id INT,
+    sol_id INT,
+    codes VARCHAR(20),
+    FOREIGN KEY (sol_id) REFERENCES custom.BRANCHES(sol_id),
+    FOREIGN KEY (account_id) REFERENCES custom.ACCOUNTS(account_id)
+);
+
+
+--Step 9: Insert into table custom.codes
+
+INSERT INTO custom.CODES (account_id, sol_id, codes)
+SELECT account_id, sol_id, 'GETRA'
+FROM custom.ACCOUNTS
+WHERE account_id BETWEEN 30001 AND 30010;
+
+
+
+
+--Step 10:View all tables
+
+SELECT * from custom.BRANCHES;
+SELECT * from custom.ACCOUNTS;
+SELECT * from custom. CODES;

@@ -1,0 +1,23 @@
+#A simple banking system
+
+print('This is Finacle core banking system')
+
+menu = input('enter menu: ')
+
+account_no = int(input('enter account number: '))
+
+amount = int(input('enter amount: '))
+
+if amount > 300000:
+
+    print('Transaction referred to supervisor')
+
+elif amount < 1000:
+
+    print('Transaction not allowed!!')
+
+else:
+
+    print('Transaction posted successfully with tranID S838530012')
+
+print('Please invoke menu')
